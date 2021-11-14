@@ -1,0 +1,20 @@
+.creatrix-count-down .displaySection
+{
+  padding: 0 15px;
+  margin: 0 10px;
+  display: inline-grid;
+  text-align: center;
+}
+.creatrix-count-down .numberDisplay
+{
+  display: block;
+  font-weight: var(--font-weight-h2);
+  font-size: var(--font-size-h2);
+  color: var(--color-theme-secondary);
+}
+.creatrix-count-down .periodDisplay
+{
+  font-size: var(--font-size-body);  
+  color: var(--global-font-title);
+  text-transform: uppercase;
+}
