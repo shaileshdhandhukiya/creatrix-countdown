@@ -24,7 +24,7 @@ An answer to that question.
 == Screenshots ==
 
 1. screenshot-1.png
-2. This is the second screen shot
+2. screenshot-2.png
 
 == Changelog ==
 
