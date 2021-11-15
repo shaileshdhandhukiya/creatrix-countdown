@@ -38,7 +38,7 @@ class Countdown_Widget extends Widget_Base {
                 'default'    => 'style_1',
                 'options'    => [
                     'style_1'          => __('Style 1', 'creatrix'),
-                    'style_2'          => __('Coming Soon', 'creatrix'),
+                    'style_2'          => __('Style 2', 'creatrix'),
                 ],
             ]
         );
@@ -107,7 +107,6 @@ class Countdown_Widget extends Widget_Base {
 					'MS'          => __( 'Minute / Second', 'creatrix' ),			
 					'S'          => __( ' Second', 'creatrix' ),			
 				],
-				
 			]
 		);
 
@@ -120,7 +119,6 @@ class Countdown_Widget extends Widget_Base {
 				'label_off' => __( 'Hide', 'creatrix' ),
 				'return_value' => 'true',
 				'default' => 'true',
-				
 			]
 		);
        
@@ -147,11 +145,15 @@ class Countdown_Widget extends Widget_Base {
 		);
 		
 		$this->end_controls_section();
+
         $this->start_controls_section(
 			'section_count_down_title',
 			[
 				'label' => __( 'Title', 'creatrix' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'counter_style' => 'style_1',
+				],
 			]
 		);
 
@@ -161,7 +163,7 @@ class Countdown_Widget extends Widget_Base {
 				'name' => 'title_typography',
 				'label' => __( ' Title Typography', 'creatrix' ),
 				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} .studioarch-title.studioarch-heading-title',
+				'selector' => '{{WRAPPER}} .creatrix-title.creatrix-heading-title',
 			]
 		);
 
@@ -171,7 +173,7 @@ class Countdown_Widget extends Widget_Base {
 				'label' => __( 'Title Color', 'creatrix' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .studioarch-title.studioarch-heading-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .creatrix-title.creatrix-heading-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -182,7 +184,7 @@ class Countdown_Widget extends Widget_Base {
 				'label' => __( 'Title Hover Color', 'creatrix' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .studioarch-title.studioarch-heading-title:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .creatrix-title.creatrix-heading-title:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -250,12 +252,70 @@ class Countdown_Widget extends Widget_Base {
 					'background' => [
 						'frontend_available' => true,
 					]
-
 				],
 			]
 		);
 		
         $this->end_controls_section();
+		
+        $this->start_controls_section(
+			'section_count_timecrad',
+			[
+				'label' => __( 'Time Card', 'creatrix' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'counter_style' => 'style_2',
+				],
+			]
+		);
+
+		
+
+		$this->start_controls_tabs(
+			'style_timecard_tabs'
+		);
+
+		$this->start_controls_tab(
+			'style_timecardnormal_tab',
+			[
+				'label' => __( 'Normal', 'creatrix' ),
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'timecard_bg_normal',
+				'label' => __( 'Background', 'creatrix' ),
+				'types' => [ 'classic', 'gradient', 'video' ],
+				'selector' => '{{WRAPPER}} .displaySection',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'style_timecardhover_tab',
+			[
+				'label' => __( 'Hover', 'creatrix' ),
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'timecard_bg_hover',
+				'label' => __( 'Background', 'creatrix' ),
+				'types' => [ 'classic', 'gradient', 'video' ],
+				'selector' => '{{WRAPPER}} .displaySection:hover',
+			]
+		);
+		
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->end_controls_section();
 
         $this->start_controls_section(
 			'section_border_style',
@@ -275,6 +335,7 @@ class Countdown_Widget extends Widget_Base {
 				'no' => __( 'no', 'creatrix' ),
 			]
         );
+
         $this->add_control(
 			'border_style',
 				[
@@ -292,14 +353,12 @@ class Countdown_Widget extends Widget_Base {
 						'inset' => __( 'inset', 'creatrix' ),
 						'hidden' => __( 'hidden', 'creatrix' ),
 						'none' => __( 'none', 'creatrix' ),
-						
 					],
 					'condition' => [
 					'has_border' => 'yes',
 					],
 					'selectors' => [
 						'{{WRAPPER}} .creatrix-count-down .numberDisplay' => 'border-style: {{VALUE}};',
-						
 					],
 				]
 			);
@@ -311,7 +370,6 @@ class Countdown_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .creatrix-count-down .numberDisplay' => 'border-color: {{VALUE}};',
-					
 				],
 				'condition' => [
 					'has_border' => 'yes',
@@ -365,6 +423,27 @@ class Countdown_Widget extends Widget_Base {
 				],
 			]
 		);
+
+		$this->end_controls_section();
+
+        $this->start_controls_section(
+			'section_custom_code',
+			[
+				'label' => __( 'Custom Code', 'creatrix' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'custom_css',
+			[
+				'label' => __( 'Custom HTML', 'creatrix' ),
+				'type' => \Elementor\Controls_Manager::CODE,
+				'language' => 'css',
+				'rows' => 20,
+			]
+		);
+
 		$this->end_controls_section();
 	}
 	
@@ -374,29 +453,27 @@ class Countdown_Widget extends Widget_Base {
          * For editor preview mode
          */
         if(Plugin::$instance->editor->is_edit_mode()) { ?>
-            <script>
-                jQuery('.creatrix-data-countdown-timer').each(function() {
-                    var future_date = jQuery(this).attr('data-date') ;
-                    var label = jQuery(this).attr('data-labels') ;
-                    var displayFormat = jQuery(this).attr('data-format') ;
-                    var l=true;
-                    if(label == "true") {
-                        l= true;
-                    } else {
-                        l = false;
-                    }
-                    jQuery(this).countdowntimer({
-                        dateAndTime : future_date,
-                        labelsFormat : l,                
-                        displayFormat : displayFormat,
-                    });
+			<script>
+				jQuery('.creatrix-data-countdown-timer').each(function() {
+					var future_date = jQuery(this).attr('data-date') ;
+					var label = jQuery(this).attr('data-labels') ;
+					var displayFormat = jQuery(this).attr('data-format') ;
+					var l=true;
+					if(label == "true") {
+						l= true;
+					} else {
+						l = false;
+					}
+					jQuery(this).countdowntimer({
+						dateAndTime : future_date,
+						labelsFormat : l,                
+						displayFormat : displayFormat,
+					});
 
-                });
-            </script>
-        <?php
-    }
+				});
+			</script> <?php
+    	}
     }	    
-		
 }
 
 Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Countdown_Widget() );

@@ -18,3 +18,19 @@
   color: var(--global-font-title);
   text-transform: uppercase;
 }
+
+/*
+*   Counter Style 2
+**/
+.creatrix-style-two.creatrix-count-down .displaySection {
+  background-color: blue;
+  border-radius: 10px;
+  font-weight: 600px;
+}
+
+.creatrix-count-down.creatrix-style-two .creatrix-data-countdown-timer .timerDisplay .displaySection .periodDisplay{
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+

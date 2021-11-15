@@ -100,7 +100,5 @@ class Creatrix_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/creatrix-public.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( "countdown", plugin_dir_url( __FILE__ ) . 'js/countdown.js', array( 'jquery' ), "1.0.0" , true );
 		wp_enqueue_script( "countdownTimer", plugin_dir_url( __FILE__ ) . 'js/jQuery.countdownTimer.min.js', array( 'jquery' ), "1.0.0", true );
-
 	}
-
 }

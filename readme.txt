@@ -25,15 +25,17 @@ An answer to that question.
 
 1. screenshot-1.png
 2. screenshot-2.png
+3. screenshot-3.png
+4. screenshot-4.png
 
 == Changelog ==
 
 = 1.0.0 =
 * Initial Release.
 
-
-
 == Upgrade Notice ==
 
 = 0.1 =
-This version fixes a security related bug.  Upgrade immediately.
+This version fixes a security related bug. 
+
+Upgrade immediately.
