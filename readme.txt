@@ -1,10 +1,10 @@
 === Creatrix Countdown ===
 Contributors: mrcreatrix
-Donate link: balatechnology.wordpress.com
-Tags: wordpress, elementor,wordpress plugin
+Donate link: www.balatechnology.wordpress.com
+Tags: wordpress, elementor,WordPress
 Requires at least: 4.7
 Tested up to: 5.8
-Stable tag: 4.3
+Stable tag: 1.0.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

@@ -6,7 +6,7 @@ $settings = $this->get_settings_for_display();
 $settings = $this->get_settings();
 
 if($settings['custom_css']){
-    echo $settings['custom_css'];
+    echo esc_html($settings['custom_css']);
 }
 
 $align = $settings['align'];
@@ -27,7 +27,7 @@ if($settings['counter_style'] == "style_1"){ ?>
     <div class="creatrix-count-down <?php echo esc_attr($align); ?>">
     <!-- TITLE START -->
         <<?php echo esc_attr($settings['title_tag']); ?> class="creatrix-title creatrix-heading-title">
-            <?php echo esc_html__($settings['timer_title']); ?>
+            <?php echo esc_html__($settings['timer_title'],'creatrix'); ?>
         </<?php echo esc_attr($settings['title_tag']); ?>>
     <!-- TITLE END-->
         <span class="creatrix-data-countdown-timer" <?php echo $this->get_render_attribute_string( 'render_attribute' ); ?>></span>   
