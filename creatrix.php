@@ -2,14 +2,14 @@
 /**
  *
  * @link              www.creatrix.wordpress.com
- * @since             1.0.0
+ * @since             1.0.1
  * @package           Creatrix
  *
  * @wordpress-plugin
  * Plugin Name:       Creatrix Countdown
  * Plugin URI:        www.creatrix.wordpress.com
  * Description:       Creatrix countdown plugin for elementor page builder it provide a countdown widget
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Shailesh Dhandhukiya
  * Author URI:        www.balatechnology.wordpress.com
  * License:           GPL-2.0+
